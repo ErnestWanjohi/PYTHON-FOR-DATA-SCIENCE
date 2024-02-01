@@ -1,18 +1,25 @@
-def prime(x):
-    if x<0:
+def isPrime(x):
+    if x < 2:
         return False
-    if x == 2:
+    elif x == 2:
         return True
-    for n in (2,x):
-        if x %n == 0:
+    for n in range(2, x):
+        if x % n ==0:
             return False
-        else:
-            return True
-def num_prime(n):
-    if prime(n):
-        yield n
+    return True
+#test data
+#print (isPrime(3))
+
+#inn a range of values
+def primeGenerator(a, b):
+    for z in range(a, b):
+
+        if isPrime(z):
+            yield z
+    
 
 
-a=int(input("Enter Number\n"))
-r=list(num_prime(a))
-print(r)
+f = int(input())
+t = int(input())
+
+print(list(primeGenerator(f, t)))
